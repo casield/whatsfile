@@ -18,6 +18,9 @@ app.get('/', (req, res) => {
     res.send('The sedulous hyena ate the antelope!');
 });
 app.use(express_1.default.static('public'));
+app.get("/uploadFile", (req, res) => {
+    res.json({ get: "You are in get" });
+});
 app.post("/uploadFile", (req, res) => {
     console.log("Somone");
     let origin = req.headers.origin;

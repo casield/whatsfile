@@ -23,11 +23,6 @@ app.post("/uploadFile", (req, res) => {
   console.log("Somone")
   let origin = req.headers.origin;
   console.log(origin)
-  if (corsOptions.origin.indexOf(origin) >= 0) {
-    res.header("Access-Control-Allow-Origin", origin);
-  } else {
-    return;
-  }
   let uploadDir = "./public";
   var form = formidable({ multiples: true, uploadDir: uploadDir, keepExtensions: true });
 

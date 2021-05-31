@@ -56,7 +56,6 @@ app.post("/uploadFile", (req, res) => {
     res.status(200).json({ result: upfiles })
     //  console.log("Files",files);
   })
-  res.json({ err: "No file" })
 })
 app.listen(port, () => {
 

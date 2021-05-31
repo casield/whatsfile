@@ -16,13 +16,16 @@ app.get('/', (req, res) => {
   res.send('The sedulous hyena ate the antelope!');
 });
 app.use(express.static('public'));
+app.get("/uploadFile",(req,res)=>{
+  res.json({get:"You are in get"})
+})
 app.post("/uploadFile", (req, res) => {
   console.log("Somone")
   let origin = req.headers.origin;
   console.log(origin)
   if (corsOptions.origin.indexOf(origin) >= 0) {
     res.header("Access-Control-Allow-Origin", origin);
-  }else{
+  } else {
     return;
   }
   let uploadDir = "./public";
@@ -53,7 +56,7 @@ app.post("/uploadFile", (req, res) => {
     res.status(200).json({ result: upfiles })
     //  console.log("Files",files);
   })
-  res.json({err:"No file"})
+  res.json({ err: "No file" })
 })
 app.listen(port, () => {
 

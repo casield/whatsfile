@@ -13,7 +13,7 @@ var corsOptions = {
     origin: ["http://localhost:3000", "https://whatshistory.vercel.app", "*"],
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
-app.use(cors_1.default(corsOptions));
+app.use(cors_1.default());
 app.get('/', (req, res) => {
     res.send('The sedulous hyena ate the antelope!');
 });

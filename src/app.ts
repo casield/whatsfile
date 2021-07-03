@@ -20,7 +20,7 @@ app.get("/uploadFile",(req,res)=>{
   console.log("Si")
   res.json({get:"You are in get"})
 })
-app.post("/uploadFile", cors(corsOptions),(req, res) => {
+app.post("/uploadFile",(req, res) => {
   console.log("Somone")
   let origin = req.headers.origin;
   console.log(origin)

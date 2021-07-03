@@ -20,7 +20,7 @@ app.get("/uploadFile",(req,res)=>{
   console.log("Si")
   res.json({get:"You are in get"})
 })
-app.post("/uploadFile", (req, res) => {
+app.post("/uploadFile", cors(corsOptions),(req, res) => {
   console.log("Somone")
   let origin = req.headers.origin;
   console.log(origin)
@@ -39,7 +39,7 @@ app.post("/uploadFile", (req, res) => {
 
 
       let newname = uploadDir + "/" + file.name
-      fs.rename(file.path, newname, (e) => { console.error(e) });
+      //fs.rename(file.path, newname, (e) => { console.error(e) });
       //name= name.replace("\\","/");
       newname = newname.replace("./", "")
       newname = newname.replace("public", "")

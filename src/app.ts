@@ -7,7 +7,7 @@ const app = express();
 const port = 2345;
 
 var corsOptions = {
-  origin: ["http://localhost:3000", "https://whatshistory.vercel.app","*"],
+  origin: ["http://localhost:3000", "https://whatshistory.vercel.app","https://whatshistory.netlify.app","*"],
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 

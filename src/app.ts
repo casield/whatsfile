@@ -33,7 +33,7 @@ app.post("/uploadFile", cors(corsOptions),(req, res) => {
     let names = Object.entries(files);
 
 
-    for (let a of names) {
+  /*  for (let a of names) {
       let file = (a[1] as formidable.File);
       let n = a[0]
 
@@ -44,7 +44,7 @@ app.post("/uploadFile", cors(corsOptions),(req, res) => {
       newname = newname.replace("./", "")
       newname = newname.replace("public", "")
       upfiles.push(newname)
-    }
+    }*/
 
     console.log({ result: upfiles })
 

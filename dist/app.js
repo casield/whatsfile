@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const formidable_1 = __importDefault(require("formidable"));
+const fs_1 = __importDefault(require("fs"));
 const app = express_1.default();
 const port = 2345;
 var corsOptions = {
@@ -33,7 +34,7 @@ app.post("/uploadFile", (req, res) => {
             let file = a[1];
             let n = a[0];
             let newname = uploadDir + "/" + file.name;
-            //fs.rename(file.path, newname, (e) => { console.error(e) });
+            fs_1.default.rename(file.path, newname, (e) => { console.error(e); });
             //name= name.replace("\\","/");
             newname = newname.replace("./", "");
             newname = newname.replace("public", "");

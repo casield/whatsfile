@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const formidable_1 = __importDefault(require("formidable"));
-const cors_1 = __importDefault(require("cors"));
 const app = express_1.default();
 const port = 2345;
 var corsOptions = {
@@ -21,7 +20,7 @@ app.get("/uploadFile", (req, res) => {
     console.log("Si");
     res.json({ get: "You are in get" });
 });
-app.post("/uploadFile", cors_1.default(corsOptions), (req, res) => {
+app.post("/uploadFile", (req, res) => {
     console.log("Somone");
     let origin = req.headers.origin;
     console.log(origin);

@@ -21,6 +21,7 @@
     "@types/cors": "^2.8.10",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "formidable": "^1.2.2"
+    "formidable": "^1.2.2",
+    "path": "^0.12.7"
   }
 }

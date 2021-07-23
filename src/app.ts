@@ -2,6 +2,8 @@ import express from 'express';
 import formidable from 'formidable';
 import fs from 'fs';
 import cors from 'cors';
+import path from 'path';
+
 
 const app = express();
 const port = 2345;
@@ -12,10 +14,11 @@ var corsOptions = {
 }
 
 //app.use(cors());
-app.get('/', (req, res) => {
-  res.send('The sedulous hyena ate the antelope!');
-});
+
 app.use(express.static('public'));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+ });
 app.get("/uploadFile",(req,res)=>{
   console.log("Si")
   res.json({get:"You are in get"})

@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const formidable_1 = __importDefault(require("formidable"));
 const fs_1 = __importDefault(require("fs"));
+const path_1 = __importDefault(require("path"));
 const app = express_1.default();
 const port = 2345;
 var corsOptions = {
@@ -13,10 +14,11 @@ var corsOptions = {
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 //app.use(cors());
-app.get('/', (req, res) => {
-    res.send('The sedulous hyena ate the antelope!');
-});
 app.use(express_1.default.static('public'));
+app.get("/", (req, res) => {
+    console.log(__dirname);
+    res.sendFile(path_1.default.join(__dirname, "public", "index.html"));
+});
 app.get("/uploadFile", (req, res) => {
     console.log("Si");
     res.json({ get: "You are in get" });
